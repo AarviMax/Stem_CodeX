@@ -1,0 +1,10 @@
+{
+  "name": "moodtune-vision",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Localhost-ready mood detection music web app",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node -c app.js && node -c server.js"
+  }
+}
