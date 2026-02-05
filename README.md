@@ -15,6 +15,13 @@ npm start
 
 - `http://127.0.0.1:3000`
 
+## To End LocalHost
+1. From folder, run
+
+```bash
+npx kill-port 3000
+```
+
 ## Notes
 
 - Allow **camera permission** in the browser.
