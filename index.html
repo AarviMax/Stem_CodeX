@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoodTune Vision</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>MoodTune Vision</h1>
+    <p>Detect mood from facial features, choose a language, and play mood-matched songs.</p>
+  </header>
+
+  <main>
+    <section class="camera-panel">
+      <div class="video-wrap">
+        <video id="video" autoplay muted playsinline></video>
+        <canvas id="overlay"></canvas>
+      </div>
+      <div class="actions">
+        <button id="startBtn">Start Camera & Detection</button>
+        <button id="analyzeBtn" disabled>Analyze Mood</button>
+      </div>
+      <div class="metrics" id="metrics">
+        <h3>Live Facial Metrics</h3>
+        <ul>
+          <li><strong>Eye Amplitude:</strong> <span id="eyeAmplitudeVal">--</span></li>
+          <li><strong>Eye Wavelength:</strong> <span id="eyeWavelengthVal">--</span></li>
+          <li><strong>Mouth Curvature:</strong> <span id="mouthCurvatureVal">--</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="analysis-panel">
+      <h2>Mood Analysis</h2>
+      <div id="analysisText" class="analysis-text">Start camera to begin mood sensing.</div>
+
+      <div class="language-row">
+        <label for="languageSelect">Select language:</label>
+        <select id="languageSelect" disabled>
+          <option value="">-- choose language --</option>
+          <option value="hindi">Hindi</option>
+          <option value="english">English</option>
+          <option value="kannada">Kannada</option>
+          <option value="bhojpuri">Bhojpuri</option>
+          <option value="malayalam">Malayalam</option>
+          <option value="telugu">Telugu</option>
+          <option value="punjabi">Punjabi</option>
+          <option value="tamil">Tamil</option>
+        </select>
+      </div>
+
+      <button id="playBtn" disabled>Play Mood Songs</button>
+
+      <div id="playlist" class="playlist"></div>
+      <iframe
+        id="player"
+        class="player"
+        title="Mood player"
+        allow="autoplay; encrypted-media"
+      ></iframe>
+    </section>
+  </main>
+</body>
+</html>
